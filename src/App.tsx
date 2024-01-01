@@ -9,6 +9,7 @@ import SignupForm from "./_auth/forms/SignupForm";
 import RootLayout from "./_root/RootLayout";
 import { Home } from "lucide-react";
 import { Toaster } from "@/components/ui/toaster"
+import { AllUsers, CreatePost, EditPost, Explore, PostDetails, Saved, UpdateProfile } from "./_root/pages";
 
 
 const App = () => {
@@ -24,6 +25,14 @@ const App = () => {
         {/* private routes */}
         <Route element={<RootLayout />}>
           <Route index element={<Home />} />
+          <Route path="/explore" element={<Explore />} />
+          <Route path="/saved" element={<Saved />} />
+          <Route path="/all-users" element={<AllUsers />} />
+          <Route path="/create-post" element={<CreatePost />} />
+          <Route path="/update-post/:id" element={<EditPost />} />
+          <Route path="/profile/:id/*" element={<PostDetails />} />
+          <Route path="/update-profile/:id" element={<UpdateProfile />} />
+
         </Route>
       </Routes>
 
