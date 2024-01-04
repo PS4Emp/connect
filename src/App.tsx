@@ -1,16 +1,23 @@
 import { Routes, Route } from "react-router-dom";
 
-
+import {
+  Home,
+  Explore,
+  Saved,
+  CreatePost,
+  Profile,
+  EditPost,
+  PostDetails,
+  UpdateProfile,
+  AllUsers,
+} from "@/_root/pages";
+import AuthLayout from "./_auth/AuthLayout";
+import RootLayout from "./_root/RootLayout";
+import SignupForm from "@/_auth/forms/SignupForm";
+import SigninForm from "@/_auth/forms/SigninForm";
+import { Toaster } from "@/components/ui/toaster";
 
 import "./globals.css";
-import AuthLayout from "./_auth/AuthLayout";
-import SigninForm from "./_auth/forms/SigninForm";
-import SignupForm from "./_auth/forms/SignupForm";
-import RootLayout from "./_root/RootLayout";
-import { Home } from "lucide-react";
-import { Toaster } from "@/components/ui/toaster"
-import { AllUsers, CreatePost, EditPost, Explore, PostDetails, Saved, UpdateProfile } from "./_root/pages";
-
 
 const App = () => {
   return (
@@ -30,9 +37,9 @@ const App = () => {
           <Route path="/all-users" element={<AllUsers />} />
           <Route path="/create-post" element={<CreatePost />} />
           <Route path="/update-post/:id" element={<EditPost />} />
-          <Route path="/profile/:id/*" element={<PostDetails />} />
+          <Route path="/posts/:id" element={<PostDetails />} />
+          <Route path="/profile/:id/*" element={<Profile />} />
           <Route path="/update-profile/:id" element={<UpdateProfile />} />
-
         </Route>
       </Routes>
 
